@@ -6,7 +6,7 @@
 
 /* Apply a background image to the entire page */
 body.home-page {
-    background-image: url('pet3.jpg'); /* Relative path to your image */
+    background-image: url('pet paw.jpg'); /* Relative path to your image */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
