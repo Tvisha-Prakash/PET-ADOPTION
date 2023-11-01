@@ -1,17 +1,46 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Retrieve user input
+    // Verify reCAPTCHA first
+    $recaptchaSecretKey = "6Lfe2dsoAAAAANptepBPd8j9gdDUeIn3opSOg3Sd";
+    $recaptchaResponse = $_POST['g-recaptcha-response'];
+
+    $url = 'https://www.google.com/recaptcha/api/siteverify';
+    $data = array(
+        'secret' => $recaptchaSecretKey,
+        'response' => $recaptchaResponse
+    );
+
+    $options = array(
+        'http' => array(
+            'header' => "Content-type: application/x-www-form-urlencoded\r\n",
+            'method' => 'POST',
+            'content' => http_build_query($data)
+        )
+    );
+
+    $context = stream_context_create($options);
+    $result = file_get_contents($url, false, $context);
+    $responseKeys = json_decode($result, true);
+
+    if (intval($responseKeys["success"]) !== 1) {
+        // CAPTCHA verification failed, show an error message or redirect as needed
+        header("Location: login.html?captcha_error=1");
+        exit;
+    }
+
+    // If CAPTCHA verification is successful, proceed with login validation
     $email = $_POST["email"];
     $password = $_POST["password"];
+
+    // Create a PDO database connection
+    $db = new PDO("mysql:host=localhost;dbname=petadoption", "root", "");
     
     // Check the user's credentials against the database
-    // Example database connection (replace with your own details):
-    $db = new PDO("mysql:host=localhost;dbname=your_database", "your_username", "your_password");
-    
-    $sql = "SELECT * FROM users WHERE email = ?";
+    $sql = "SELECT * FROM users WHERE email = :email";
     $stmt = $db->prepare($sql);
-    $stmt->execute([$email]);
-    $user = $stmt->fetch();
+    $stmt->bindParam(':email', $email);
+    $stmt->execute();
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
     
     if ($user && password_verify($password, $user["password"])) {
         // Successful login
@@ -19,8 +48,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION["user_id"] = $user["id"]; // Store user ID in the session
         header("Location: dashboard.html"); // Redirect to the user's dashboard
     } else {
-        // Invalid login, show an error message
-        header("Location: login.html?error=1");
+        // Invalid login, show an error message or redirect
+        header("Location: login.html?login_error=1");
     }
 }
 ?>
