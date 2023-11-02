@@ -1,36 +1,34 @@
-/* Reset default margin and padding for all elements */
+
 * {
     margin: 0;
     padding: 0;
 }
 
-/* Apply a background color to the entire page */
 body.login-page {
         background-image: url('pet paw.jpg');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-        background-attachment: fixed; /* Optional: This keeps the background fixed while scrolling */
-        color: #000000; /* Set text color to contrast with the background */
+        background-attachment: fixed; 
+        color: #000000; 
 }
 .container {
     display: flex;
-    flex-direction: column; /* Stack items vertically */
-    justify-content: center; /* Center vertically */
-    align-items: center; /* Center horizontally */
-    height: 100vh; /* Make the container take the full height of the viewport */
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; 
 } 
 
-/* Center the registration and login forms */
 form {
         width: 300px;
-        background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white background */
+        background-color: rgba(255, 255, 255, 0.2); 
         padding: 20px;
-        border: 1px solid rgba(255, 255, 255, 0.2); /* Semi-transparent border */
+        border: 1px solid rgba(255, 255, 255, 0.2); 
         border-radius: 10px;
         margin-top: 20px;
-        backdrop-filter: blur(10px); /* Apply a blur effect */
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Add a shadow effect */
+        backdrop-filter: blur(10px); 
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); 
 }
 
 h2 {
@@ -43,22 +41,22 @@ label {
     margin: 10px 0;
 }
 
-/* Style the input elements with a glassmorphic effect */
+
 form input[type="email"],
 form input[type="password"] {
     width: 90%;
     padding: 15px;
     margin: 5px 0;
-    border: 1px solid rgba(255, 255, 255, 0.2); /* Semi-transparent border */
+    border: 1px solid rgba(255, 255, 255, 0.2); 
     border-radius: 20px;
-    backdrop-filter: blur(5px); /* Apply a blur effect to input fields */
-    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    backdrop-filter: blur(5px); 
+    background-color: rgba(255, 255, 255, 0.1); 
     color: #fff;
 }
 
 form input[type="email"]:focus,
 form input[type="password"]:focus {
-    outline: none; /* Remove focus outline */
+    outline: none; 
 }
 
 button {
@@ -72,19 +70,19 @@ button {
     cursor: pointer;
 }
 
-/* Style the buttons on hover */
+
 button:hover {
     background-color: #0056b3;
 }
 
-/* Style for error messages */
+
 .error {
     color: red;
     font-size: 14px;
     margin-top: 10px;
 }
 
-/* Add some spacing between elements */
+
 br {
     line-height: 20px;
 }

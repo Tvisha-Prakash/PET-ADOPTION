@@ -6,18 +6,21 @@
 </head>
 <body class="login-page">
     <div class="container">
-    <h2>Login</h2>
-    <form action="login1.php" method="post">
-        <label for="email">Email:</label>
-        <input type="email" name="email" required><br>
+        <h2>Login</h2>
+        <form action="login.php" method="post">
+            <label for="email">Email:</label>
+            <input type="email" name="Email" required><br>
 
-        <label for="password">Password:</label>
-        <input type="password" name "password" required><br>
+            <label for="password">Password:</label>
+            <input type="password" name="Password" required><br>
+           
+            <input type="text" name="captcha" placeholder="Enter CAPTCHA">
+            <img src="gencaptcha.php" alt="CAPTCHA">
 
-        <button type="submit">Login</button>
+            <button type="submit">Login</button>
 
-        <p>Don't have an account? <a href="register.html">Register here</a></p>
-    </form>
+            <p>Don't have an account? <a href="register.html">Register here</a></p>
+        </form>
     </div>
 </body>
 </html>
