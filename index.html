@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <!-- <link rel="stylesheet" href="styles1.css"> -->
+
+<style>
+    :root{
+    --pink:#e84393;
+    --grey:#F2F3F5;   
+}
+*{
+    margin:0; padding:0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    outline: none; border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    overflow-x: hidden;
+}
+section{
+    padding: 2rem 9%;
+}
+
+.btn{
+    display:inline-block;
+    margin-top: 1rem;
+    border-radius: 5rem;
+    background: #333;
+    color: #fff;
+    padding: .5rem 2.5rem;
+    cursor:pointer;
+    font-size: 1.2rem;
+}
+
+.btn:hover{
+    background: var(--grey);
+}
+
+header{
+    position :fixed;
+    top :0; left :0; right :0;
+    background: #ffffff;
+    padding: 2rem 9%;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index:1000;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+}
+
+header .logo{
+    font-size: 3rem;
+    color: #333;
+    font-weight: bolder;
+}
+
+header .logo span{
+    color: var(--pink);
+}
+
+header .navbar a{
+    font-size: 1.5rem;
+    padding:0 1.5rem;
+    color:#666;
+}
+
+header .navbar a:hover{
+    color:var(--pink);
+}
+
+section{
+    padding: 2rem;
+}
+
+.home{
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url("images/pet paw.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.home .content{
+    max-width: 50rem;
+}
+
+.home .content h3{
+    font-size: 5rem;
+    color:#ccb5b5;
+    padding:1rem 0;
+    line-height: 1;
+}
+
+.home .content span{
+    font-size: 3.5rem;
+    color:var(--pink);
+    padding: 1rem 0;
+    line-height: 1.5;
+}
+.home .content .search-bar input[type="text"] {
+    width: 60%;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+/*
+.home .content p{
+    font-size: 2rem;
+    color:#999;
+    padding: 1rem 0;
+    line-height: 1.5;
+}
+*/
+
+.heading{
+    text-align: center;
+    font-size: 4rem;
+    color: #333;
+    padding: 1rem;
+    margin: 2rem 0;
+    background: rgba(255, 51, 153,.05);
+}
+
+.heading span{
+    color: var(--pink);
+}
+
+.animals .box-container{
+    display:flex;
+    flex-wrap:wrap;
+    gap:1rem;
+}
+
+.animals .box-container .box{
+    flex:1 1 30rem;
+    box-shadow: 0 1rem 2rem rgba(0,0,0,.1);
+    border-radius: 1rem;
+    border: .1rem solid rgba(0,0,0,.1);
+    position: relative;
+    background-color: rgba(rgb(83, 75, 75), green, blue, alpha);
+}
+
+.animals .box-container .box .image{
+    position: relative;
+    text-align: center;
+    padding-top: 2rem;
+    overflow: hidden;
+}
+
+.animals .box-container .box .image img{
+    height: 20rem;
+}
+
+.animals .box-container .box:hover .image img{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.animals .box-container .box .content{
+    padding:2rem;
+    text-align: center;
+}
+
+.animals .box-container .box .content h3{
+    font-size: 2.5rem;
+    color:#333;
+    font-weight: bolder;
+    padding-top: 1rem;
+}
+
+.footer .box-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.footer .box-container .box{
+    flex:1 1 25rem;
+}
+
+.footer .box-container .box h3{
+    color:#333;
+    font-size: 2.5rem;
+    padding:1rem 0;
+}
+
+.footer .box-container .box a{ 
+    display: block;
+    color:#333;
+    font-size: 1.5rem;
+    padding:1rem 0;
+}
+
+.footer .box-container .box a:hover{ 
+    color:var(--pink);
+    text-decoration: underline;
+}
+
+.footer .credit{
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+    padding-top: 2.5rem;
+    font-size: 2rem;
+    color: #333;
+    border-top: .1rem solid rgba(0,0,0,.1);
+}
+
+.footer .credit span{
+    color:var(--pink);
+}
+
+
+@media (max-width:991px){
+    html{
+        font-size: 62.5%;
+    } 
+    header{
+        padding: 2rem;
+    }
+}
+
+@media (max-width:768px){
+    header .navbar{
+        position:absolute;
+        top:0; left:0; right:0;
+        background: #eee;
+        border-top: .1rem solid rgba(0,0,0,.1);
+    }
+
+    header .navbar a{
+        margin:1.5rem;
+        padding:1.5rem;
+        background:#fff;
+        border: .1rem solid rgba(0,0,0,.1);
+        display: block;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+}
+
+@media (max-width:991px){
+    html{
+        font-size: 50%;
+    } 
+}
+</style>
+
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">PetAdoption<span>.</span></a>
+
+        <nav class="navbar">
+            <a href="#home">HOME</a>
+            <a href="#animals">ADOPT PETS</a>
+            <button class="btn"><a href="components\login.html">LOGIN</a></button>
+            <button class="btn"><a href="components/register.html">REGISTER</a></button>
+            
+        </nav>
+    </header>
+
+<section class="home" id="home">
+    
+    <div class="content">
+        <h3>Get your Pet</h3>
+        <span>Haven for pet lovers.</span>
+        <!-- <p>lorem ipsu
+        </p> -->
+        <span>
+            <div class="search-bar">
+                <input type="text" placeholder="Search for pets...">
+            </div>
+        </span>
+        <a href="#" class="btn">Search now</a>
+    </div>
+</section>
+
+<section class ="animals" id="animals">
+    <h1 class="heading">ADOPT <span>PETS</span></h1> 
+    <div class="box-container">
+        <div class="box">
+            <div class="image">
+                <img src="images\dog.jpg" alt="">
+            </div>
+            <div class="content">
+            <h3>Dogs</h3>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="image">
+                <img src="images\cat.jpg" alt="">
+            </div>
+            <div class="content">
+               <h3>Cats</h3>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="image">
+                <img src="images\bird.jpg" alt="">
+            </div>
+            <div class="content">
+            <h3> Birds</h3>
+            </div>
+        </div>
+    </div>   
+</section>
+
+<section class="footer">
+    <div class="box-container">
+        
+        <div class="box">
+            <h3>Extra Links</h3>
+            <a href="#">HOME</a>
+            <a href="#animals">ADOPT PET</a>
+            <a href="/components/login.html">LOGIN</a>
+            <a href="/components/register.html">REGISTER</a>            
+        </div>
+
+        <div class="box">
+            <h3>Quick Links</h3>
+            <a href="#">My Account</a>
+            <a href="#">My Order</a>
+            <a href="#">My Favourite</a>
+        </div>
+
+        <div class="box">
+            <h3>Locations</h3>
+            <a href="#">Mangalore</a>
+            <a href="#">Udupi</a>
+            <a href="#">Manipal</a>
+            <a href="#">Bangalore</a>            
+        </div>
+
+        <div class="box">
+            <h3>Contact Info</h3>
+            <a href="#">+91 1234560789</a>
+            <a href="#">abc@gmail.com</a>
+            <a href="#">Mangalore,India</a>          
+        </div>
+
+    <div class="credit">
+        Created by <span> Srilaxmi and Tvisha</span>
+    </div>
+    </div>
+</section>
+
+</body>
+</html>

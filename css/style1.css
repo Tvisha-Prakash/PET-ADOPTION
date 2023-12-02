@@ -1,0 +1,146 @@
+/* Reset default margin and padding */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8; /* Fallback background color */
+    background-image: url("/images/dog1.jpg"); /* Add your background image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Glassmorphic section styling for dashboard */
+.dashboard-section {
+    margin: 2rem auto; /* Center the dashboard section */
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+    color: #333;
+    text-align: center;
+}
+
+.dashboard-content {
+    display: flex;
+    justify-content: space-around;
+    margin: 2rem auto; /* Center the boxes horizontally */
+}
+
+.dashboard-options a {
+    margin: 0.5rem;
+    padding: 1rem 2rem;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif; 
+    transition: background-color 0.3s ease-in-out;
+}
+
+.dashboard-options a:hover {
+    background-color: #555; /* Change hover background color as needed */
+}
+
+/* Featured Pets, Recent Comments, and Recent Images Sections */
+.dashboard-box {
+    flex: 1;
+    margin: 1rem;
+    padding: 1.5rem; /* Adjusted padding for consistent sizing */
+    background: #fff; /* White opaque background */
+    border-radius: 10px;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+    color: #333;
+    text-align: center;
+    overflow: hidden; /* Ensure the box-shadow is clipped during hover */
+    position: relative;
+    cursor: pointer; /* Set cursor to pointer */
+    transition: transform 0.3s ease-in-out;
+}
+
+.dashboard-box::before {
+    content: ''; /* Create a pseudo-element to cover the entire box */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.2); /* Semi-transparent overlay */
+    opacity: 0; /* Initially transparent */
+    transition: opacity 0.3s ease-in-out; /* Add transition effect */
+    pointer-events: none; /* Allow interaction with the content underneath */
+}
+
+.dashboard-box:hover {
+    transform: scale(1.02); /* Enlarge on hover */
+}
+
+.dashboard-box:hover::before {
+    opacity: 1; /* Make the overlay visible on hover */
+}
+
+/* New styles for extended dashboard components */
+
+.pet-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 15px;
+    text-align: center;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.pet-card img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.comment {
+    margin-bottom: 15px;
+    padding: 15px;
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.image-gallery {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.image-gallery img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-box h3 {
+    color: #555;
+}
+
+.dashboard-box p {
+    margin: 0 0 15px;
+}
+
+.dashboard-box ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.dashboard-box li {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.dashboard-box li:hover {
+    background-color: #f4f4f4; /* Light gray on hover, update as needed */
+}

@@ -1,0 +1,77 @@
+body {
+    font-family: 'Playfair Display', serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Card Styles */
+.card {
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative; /* Ensure relative positioning for absolute children */
+}
+
+/* Header Styles */
+.header {
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 2rem;
+    color: #333;
+    margin: 0;
+    font-weight: bold;
+}
+
+.header p {
+    font-size: 1rem;
+    color: #666;
+    margin: 10px 0 0;
+}
+
+/* Content Styles */
+.content {
+    padding: 20px;
+    text-align: justify;
+    line-height: 1.6;
+}
+
+.content p {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.content strong {
+    color: #e84393;
+}
+
+.content a {
+    color: #e84393;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.content a:hover {
+    text-decoration: underline;
+}
+
+/* Footer Styles */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #f2f3f5;
+}
+
+.footer span {
+    color: #e84393;
+    font-weight: bold;
+}
